@@ -1,9 +1,12 @@
 #Capturar error de division por Cero.
+from NumerosIgualesException import NumeroesIgualesException
 resultado = None # None significa no valor
 
 try:
     a = int(input('Digite el primer número: '))
     b = int(input('Digite el segundo número: '))
+    if a == b:
+        raise NumeroesIgualesException("Numeros iguales")
     resultado = a / b # modificamos
 except TypeError as e:
     print(f'TypeError - Ocurrió un error: {type(e)}')
