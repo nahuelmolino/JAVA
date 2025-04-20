@@ -6,4 +6,3 @@ except Exception as e:
 finally: # siempre se ejecuta
     archivo.close() # Con esto se debe cerrar el archivo.
 
-    
