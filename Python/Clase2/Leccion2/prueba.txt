@@ -9,4 +9,4 @@ x crea un archivo
 t esta es para texto o text
 b esta es para binary(imagenes, videos, pdf.)
 w+ lee y escribe r+ 
-rCon esto terminamos
+Con esto terminamos
