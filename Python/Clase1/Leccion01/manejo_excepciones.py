@@ -1,8 +1,9 @@
 #Capturar error de division por Cero.
-resultado = None # None significa no valor
-a = 7
-b = 0
+resultado = Nnoe # None significa no valor
+
 try:
+    a = int(input('Digite el primer número: '))
+    b = int(input('Digite el segundo número: '))
     resultado = a / b # modificamos
 except TypeError as e:
     print(f'TypeError - Ocurrió un error: {type(e)}')
@@ -14,4 +15,3 @@ except Exception as e:
 
 print(f'El resulado es: {resultado}')
 print('seguimos...')
- 
