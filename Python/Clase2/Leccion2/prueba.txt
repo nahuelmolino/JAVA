@@ -1,4 +1,12 @@
 Programamos con diferentes tipos de archivos, ahora en txt.
 Los acenos son importantes para las palabras
 como por ejemplo: acción, ejecución y producción
-Con esto terminamos
+las letras son:
+r read leer, 
+a append anexa, 
+w write escribe, 
+x crea un archivo
+t esta es para texto o text
+b esta es para binary(imagenes, videos, pdf.)
+w+ lee y escribe r+ 
+rCon esto terminamos
