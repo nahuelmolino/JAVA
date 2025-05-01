@@ -14,6 +14,9 @@ public class TestModificadoresAcceso {
         
         Clase3 claseHija = new Clase3();
         System.out.println("claseHija = " + claseHija);
+        
+        
+        
     }
    
 }
