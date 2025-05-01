@@ -1,6 +1,7 @@
 package test;
 
 import paquete1.Clase1;
+import paquete2.Clase3;
 
 public class TestModificadoresAcceso {
     //Public: puede ser utilizada desde una clase o desde otra clase, en cualquier parte de nuestro proyecto.
@@ -11,6 +12,8 @@ public class TestModificadoresAcceso {
         System.out.println("clase1 = " + clase1.atributoPublico);
         clase1.metodoPublico();
         
+        Clase3 claseHija = new Clase3();
+        System.out.println("claseHija = " + claseHija);
     }
    
 }
