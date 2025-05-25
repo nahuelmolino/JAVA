@@ -13,7 +13,7 @@ while opcion != 4:
         print('4. Salir')
         opcion = int(input('Digite una opción de menú (1-4)'))
         if opcion ==1:
-            nombre_pelicula = input('Digite el nombre de la pelicula')
+            nombre_pelicula = input('Digite el nombre de la pelicula: ')
             pelicula  = Pelicula(nombre_pelicula)
             cp.agregar_peliculas(pelicula)
         elif opcion == 2:
