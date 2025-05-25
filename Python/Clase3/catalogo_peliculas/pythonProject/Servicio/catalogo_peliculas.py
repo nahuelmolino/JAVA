@@ -1,11 +1,12 @@
 import os
 
 class CatalogoPeliculas:
-    # atributo de clase
+    # atributo de clase( no de instancia) es compartido por todas las instancias de la clase.
     ruta_archivo = 'peliculas.txt'
 
     #puede acceder directamente a los atributos de clase
     # cls es contexto de clase
+    #metodos de clase, lo que significa que no se necesita crear objetos de tipo Catalogo_peliculas para usar sus funciones
     @classmethod
     def agregar_peliculas(cls, pelicula):
         with open(cls.ruta_archivo, 'a', encoding = 'utf8') as archivo:
