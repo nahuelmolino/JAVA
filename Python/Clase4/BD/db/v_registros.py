@@ -5,10 +5,11 @@ conexion = psycopg2.connect(    user = 'postgres',    password = 'admin',    hos
 try:
     with conexion:
         with conexion.cursor() as cursor:
-            # Placeholder
-            sentencia = 'SELECT * FROM persona where id_persona IN (1, 2)' # Placeholder
-            # id_persona = input('Digite un numero para el  id_persona: ')
-            cursor.execute(sentencia)  # De esta manera ejecutamos la sentencia
+            sentencia = 'SELECT * FROM persona where id_persona IN %s' # Placeholder
+            entrada = input('Digite los id_persona a buscar (separados por coma): ')
+            # tupla de tuplas
+            llaves_primarias = (tuple(entrada.split(', ')),)
+            cursor.execute(sentencia, llaves_primarias)  # De esta manera ejecutamos la sentencia
             registros = cursor.fetchall()  # Recuperamos todos los registros que serán una lista
             for registro in registros:
                print(registro)
