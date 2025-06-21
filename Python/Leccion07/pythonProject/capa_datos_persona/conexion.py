@@ -1,3 +1,8 @@
+import psycopg2 as db
+#psycopg2 as db  otra manera de importar el psycopg2
+from logger_base import log
+import sys
+
 class Conexion:
     _DATABASE = 'test_db'
     _USERNAME = 'postgres'
@@ -6,3 +11,20 @@ class Conexion:
     _HOST = '127.0.0.1'
     _conexion = None
     _cursor = None
+
+    @classmethod
+    def obtenerConexion(cls):
+        if cls._conexion is None:
+            try:
+                cls._conexion= db.connect(host=cls._HOST,
+                                          user = cls._USERNAME,
+                                          password = cls._PASSWORD,
+                                          port = cls._DB_PORT,
+                                          database = cls._DATABASE)
+                log.debug(f'Conexión Exitosa: {cls._conexion}')
+                return cls._conexion
+            except Exception as e:
+                log.error(f'Ocurrío un error: {e}')
+                sys.exit()
+        else:
+            return cls._conexion
