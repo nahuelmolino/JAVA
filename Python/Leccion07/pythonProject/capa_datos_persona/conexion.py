@@ -40,7 +40,8 @@ class Conexion:
             except Exception as e:
                 log.error(f'Ocurrió un error : {e}')
                 sys.exit() # termina el programa:
-                return cls._cursor
+        else:
+            return cls._cursor
 
 if __name__ == '__main__': #es una estructura especial en Python que se usa para ejecutar código solo cuando el archivo se ejecuta directamente, y no cuando se importa desde otro archivo.
     Conexion.obtenerConexion()
