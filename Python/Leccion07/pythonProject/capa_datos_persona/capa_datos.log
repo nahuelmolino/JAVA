@@ -111,3 +111,17 @@
             Apellido: None,
             Email: None
         
+06:29:$S PM:DEBUG [conexion.py:26] Conexión Exitosa: <connection object at 0x000002839CCD07B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+06:29:$S PM:DEBUG [conexion.py:26] Conexión Exitosa: <connection object at 0x000001FA596F07B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.12 port=5432', closed: 0>
+06:29:$S PM:DEBUG [conexion.py:26] Conexión Exitosa: <connection object at 0x00000226D94707B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.12 port=5432', closed: 0>
+06:30:$S PM:ERROR [conexion.py:29] Ocurrío un error: connection to server at "127.0.0.1", port 543 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+06:30:$S PM:DEBUG [conexion.py:26] Conexión Exitosa: <connection object at 0x0000021829F807B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+06:31:$S PM:ERROR [conexion.py:29] Ocurrío un error: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+06:31:$S PM:ERROR [conexion.py:29] Ocurrío un error: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+06:31:$S PM:ERROR [conexion.py:29] Ocurrío un error: 'utf-8' codec can't decode byte 0xf3 in position 79: invalid continuation byte
+06:31:$S PM:DEBUG [conexion.py:26] Conexión Exitosa: <connection object at 0x00000274844A07B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+06:32:$S PM:DEBUG [conexion.py:26] Conexión Exitosa: <connection object at 0x0000014E26DD07B0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+06:33:$S PM:DEBUG [conexion.py:26] Conexión Exitosa: <connection object at 0x000001562B62C8C0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+06:33:$S PM:DEBUG [conexion.py:38] Se abrió correctamente el cursor: <cursor object at 0x000001562B16A180; closed: 0>

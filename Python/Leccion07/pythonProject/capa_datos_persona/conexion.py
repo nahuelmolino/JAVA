@@ -1,3 +1,5 @@
+from multiprocessing.managers import convert_to_error
+
 import psycopg2 as db
 #psycopg2 as db  otra manera de importar el psycopg2
 from logger_base import log
@@ -28,3 +30,18 @@ class Conexion:
                 sys.exit()
         else:
             return cls._conexion
+    @classmethod
+    def obtenerCursor(cls):
+        if cls._cursor is None:
+            try:
+                cls._cursor = cls.obtenerConexion().cursor()
+                log.debug(f'Se abrió correctamente el cursor: {cls._cursor}')
+                return cls._cursor
+            except Exception as e:
+                log.error(f'Ocurrió un error : {e}')
+                sys.exit() # termina el programa:
+                return cls._cursor
+
+if __name__ == '__main__': #es una estructura especial en Python que se usa para ejecutar código solo cuando el archivo se ejecuta directamente, y no cuando se importa desde otro archivo.
+    Conexion.obtenerConexion()
+    Conexion.obtenerCursor()
