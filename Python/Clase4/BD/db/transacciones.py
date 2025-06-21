@@ -8,17 +8,12 @@ try:
     cursor = conexion.cursor()
 
     sentencia = 'INSERT INTO persona(nombre, apellido, email) VALUES (%s,%s,%s)'
-    valores = ('Jorge', 'Prol', 'jprol@gmail.com')
+    valores = ('María', 'Esparza', 'mesparza@mail.com')
     cursor.execute(sentencia, valores)
-
-    sentencia = 'UPDATE persona SET nombre = %s, apellido = %s, email = %s WHERE id_persona = %s'
-    valores = ('Juan Carlos', 'Perez', 'jcperez@mail.com',7)
-    cursor.execute(sentencia, valores)
-
-    conexion.commit() # hacemos el commit manuanlamente , se cierra la transaccion
+    conexion.commit() # hacemos el commit manuanlamente
     print('Termina la transacción')
 except Exception as e:
-    conexion.rollback() # agrego el rollback
+    conexion.rollback()
     print(f'Ocurrió un error, se hizo un rollback : {e}')
 finally:
     conexion.close()
