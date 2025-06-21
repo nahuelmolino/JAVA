@@ -1,3 +1,7 @@
+from capa_datos_persona.Persona import Persona
+from capa_datos_persona.conexion import Conexion
+
+
 class PersonaDAO:
     """
         DAO significa : DATA ACCSS OBJECT
@@ -11,3 +15,18 @@ class PersonaDAO:
     _INSERTAR = "INSERT INTO persona(nombre, apellido, email) VALUES (%s, %s, %s)"
     _ACTUALIZAR = "UPDATE persona SET nombre = %s, apellido = %s, email = %s where id_persona = %s"
     _eliminar = "DELETE FROM persona WHERE id_persona = %s"
+
+    #Definimos metodos de clase
+    @classmethod
+    def seleccionar(cls):
+        #Armar conexiones automaticas
+        with    Conexion.obtenerConexion():
+            with Conexion.obtenerCursor() as cursor:
+                cursor.execute(cls._SELECCIONAR)
+                registros = cursor.fetchall()
+                # lista
+                personas = []
+                for registro in registros:
+                    persona = Persona(registro[0],registro[1],registro[2],registro[3])
+                    personas.append(persona)
+                    
