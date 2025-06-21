@@ -1,6 +1,7 @@
+from logger_base import log
 class Persona:
     #esto esta encapsulado
-    def __init__(self, id_persona, nombre, apellido, email):
+    def __init__(self, id_persona=None, nombre=None, apellido=None, email=None):
         self._id_persona = id_persona
         self._nombre = nombre
         self._apellido = apellido
@@ -9,8 +10,8 @@ class Persona:
     def __str__(self):
         return f'''
             Id Persona: {self._id_persona},
-            Nombre: {self._nombre}
-            Apellido: {self._apellido}
+            Nombre: {self._nombre},
+            Apellido: {self._apellido},
             Email: {self._email}
         '''
 
@@ -47,7 +48,12 @@ def email(self):
 def email(self,email):
     self._email=email
 
-
-
+if __name__== '__main__':
+    persona1 = Persona(1,'Juan', 'Perez','jperez@mail.com')
+    log.debug(persona1)
+    persona2 = Persona(nombre='Jose', apellido='Lepez', email='ljose@mail.com')
+    log.debug(persona2)
+    persona1 = Persona(id_persona = 1)
+    log.debug(persona1)
 
 

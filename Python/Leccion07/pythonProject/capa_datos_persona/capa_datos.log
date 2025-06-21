@@ -3,3 +3,111 @@
 05:10:$S PM:WARNING [logger_base.py:17] Mensaje a nivel warning
 05:10:$S PM:ERROR [logger_base.py:18] Mensaje a nivel error
 05:10:$S PM:CRITICAL [logger_base.py:19] Mensaje a nivel critical
+05:33:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Nahuel
+            Apellido: Molino
+            Email: nahuel.molino.mza@gmail.com
+        
+05:33:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Nahuel,
+            Apellido: Molino,
+            Email: nahuel.molino.mza@gmail.com
+        
+05:33:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+        
+05:34:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+        
+05:35:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+        
+05:35:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+        
+05:36:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+        
+05:37:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+        
+05:37:$S PM:DEBUG [Persona.py:55] 
+            Id Persona: pepe,
+            Nombre: None,
+            Apellido: None,
+            Email: None
+        
+05:37:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+        
+05:37:$S PM:DEBUG [Persona.py:55] 
+            Id Persona: Jose,
+            Nombre: Lepez,
+            Apellido: ljose@mail.com,
+            Email: None
+        
+05:38:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+        
+05:38:$S PM:DEBUG [Persona.py:55] 
+            Id Persona: Jose,
+            Nombre: Lepez,
+            Apellido: ljose@mail.com,
+            Email: None
+        
+05:39:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+        
+05:39:$S PM:DEBUG [Persona.py:55] 
+            Id Persona: None,
+            Nombre: Jose,
+            Apellido: Lepez,
+            Email: ljose@mail.com
+        
+05:40:$S PM:DEBUG [Persona.py:53] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+        
+05:40:$S PM:DEBUG [Persona.py:55] 
+            Id Persona: None,
+            Nombre: Jose,
+            Apellido: Lepez,
+            Email: ljose@mail.com
+        
+05:40:$S PM:DEBUG [Persona.py:57] 
+            Id Persona: 1,
+            Nombre: None,
+            Apellido: None,
+            Email: None
+        
