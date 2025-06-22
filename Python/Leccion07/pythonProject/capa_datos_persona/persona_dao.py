@@ -22,7 +22,7 @@ class PersonaDAO:
     def seleccionar(cls):
         #Armar conexiones automaticas
         with    Conexion.obtenerConexion():
-            with Conexion.obtenerCursor() as cursor:
+           with Conexion.obtenerCursor() as cursor:
                 cursor.execute(cls._SELECCIONAR)
                 registros = cursor.fetchall()
                 # lista
@@ -41,11 +41,25 @@ class PersonaDAO:
                  log.debug(f'Persona Insertada: {persona}')
                  return cursor.rowcount
 
+    @classmethod
+    def actualziar(cls,persona):
+        with Conexion.obtenerConexion():
+            with Conexion.obtenerCursor() as cursor:
+                valores = (persona.nombre,persona.apellido, persona.email, persona.id_persona)
+                cursor.execute(cls._ACTUALIZAR, valores)
+                log.debug(f'Persona actualizada: {persona}')
+                return cursor.rowcount
+
 if __name__ == '__main__' :
+    # Actualizar un registro
+    persona1 = Persona(id_persona=2,nombre='Juan Jose', apellido='pena', email='jjpena@mail.com')
+    persona_actualizada = PersonaDAO.actualziar(persona1)
+    log.debug(f'Persona actualizada: {persona_actualizada}')
+
     # Insertar un registro
-    persona1 = Persona(nombre='Pedro', apellido='Romero', email='promero@mail.com')
-    personas_insertadas = PersonaDAO.insertar(persona1)
-    log.debug(f'Personas insertadas: {personas_insertadas} ')
+    #persona1 = Persona(nombre='omero', apellido='simpson', email='osimpson@mail.com')
+    #personas_insertadas = PersonaDAO.insertar(persona1)
+    #log.debug(f'Personas insertadas: {personas_insertadas} ')
 
 
     # Selecionar objetos
