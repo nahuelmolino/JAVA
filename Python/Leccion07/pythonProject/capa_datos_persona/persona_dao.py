@@ -36,13 +36,10 @@ class PersonaDAO:
     def insertar(cls,persona):
         with Conexion.obtenerConexion():
               with Conexion.obtenerCursor() as cursor:
-
-                 valores = (persona._nombre, persona._apellido, persona._email)
+                 valores = (persona.nombre, persona.apellido, persona.email)
                  cursor.execute(cls._INSERTAR,valores)
                  log.debug(f'Persona Insertada: {persona}')
                  return cursor.rowcount
-
-
 
 if __name__ == '__main__' :
     # Insertar un registro

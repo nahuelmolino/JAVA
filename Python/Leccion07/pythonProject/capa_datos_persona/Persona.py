@@ -15,38 +15,38 @@ class Persona:
             Email: {self._email}
         '''
 
-# Métodos Getters and Setters
-@property
-def id_persona(self):
-    return self._id_persona
+    # Métodos Getters and Setters
+    @property
+    def id_persona(self):
+        return self._id_persona
 
-@id_persona.setter
-def id_persona(self,id_persona):
-    self._id_persona = id_persona
+    @id_persona.setter
+    def id_persona(self,id_persona):
+        self._id_persona = id_persona
 
-@property
-def nombre(self):
-    return self._nombre
+    @property
+    def nombre(self):
+        return self._nombre
 
-@nombre.setter
-def nombre(self,nombre):
-    self._nombre = nombre
+    @nombre.setter
+    def nombre(self,nombre):
+        self._nombre = nombre
 
-@property
-def apellido(self):
-    return self._apellido
+    @property
+    def apellido(self):
+        return self._apellido
 
-@apellido.setter
-def apellido(self,apellido):
-    self._apellido = apellido
+    @apellido.setter
+    def apellido(self,apellido):
+        self._apellido = apellido
 
-@property
-def email(self):
-    return self._email
+    @property
+    def email(self):
+        return self._email
 
-@email.setter
-def email(self,email):
-    self._email=email
+    @email.setter
+    def email(self,email):
+        self._email=email
 
 if __name__== '__main__':
     persona1 = Persona(1,'Juan', 'Perez','jperez@mail.com')
