@@ -20,7 +20,7 @@ class Conexion:
         conexion = cls.obtenerPool().getconn()
         log.debug(f'Conexión obtenida del pool: {conexion}')
         return conexion
-        
+
     @classmethod
     def obtenerCursor(cls):
         pass
@@ -37,6 +37,7 @@ class Conexion:
                                                       port = cls._DB_PORT,
                                                       database=cls._DATABASE)
                 log.debug(f'Creación de pool exitosa: {cls._pool}')
+                return cls._pool
             except Exception as e:
                 log.error(f'Ocurrió un error al obtener el Pool: {e}')
                 sys.exit()
@@ -44,5 +45,10 @@ class Conexion:
             return cls._pool
 
 
-if __name__ == '__main__': #es una estructura especial en Python que se usa para ejecutar código solo cuando el archivo se ejecuta directamente, y no cuando se importa desde otro archivo.
-    pass
+if __name__ == '__main__':
+    conexion1 = Conexion.obtenerConexion()
+    conexion2 = Conexion.obtenerConexion()
+    conexion3 = Conexion.obtenerConexion()
+    conexion4 = Conexion.obtenerConexion()
+    conexion5 = Conexion.obtenerConexion()
+
