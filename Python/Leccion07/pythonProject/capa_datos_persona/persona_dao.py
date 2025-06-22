@@ -49,12 +49,26 @@ class PersonaDAO:
                 cursor.execute(cls._ACTUALIZAR, valores)
                 log.debug(f'Persona actualizada: {persona}')
                 return cursor.rowcount
+    @classmethod
+    def eliminar(cls,persona):
+        with Conexion.obtenerConexion():
+            with Conexion.obtenerCursor() as cursor:
+                valores = (persona.id_persona,) #la coma va porque es una tupla de valores
+                cursor.execute(cls._eliminar, valores)
+                log.debug(f'Los objetos eliminados son: {persona}')
+                return cursor.rowcount
 
 if __name__ == '__main__' :
+   #eliminar un registro
+   persona1 = Persona(id_persona=2)
+   persona_eliminada = PersonaDAO.eliminar(persona1)
+   log.debug(f'Persona eliminada: {persona_eliminada}')
+
+
     # Actualizar un registro
-    persona1 = Persona(id_persona=2,nombre='Juan Jose', apellido='pena', email='jjpena@mail.com')
-    persona_actualizada = PersonaDAO.actualziar(persona1)
-    log.debug(f'Persona actualizada: {persona_actualizada}')
+    #persona1 = Persona(id_persona=2,nombre='Juan Jose', apellido='pena', email='jjpena@mail.com')
+    #persona_actualizada = PersonaDAO.actualziar(persona1)
+    #log.debug(f'Persona actualizada: {persona_actualizada}')
 
     # Insertar un registro
     #persona1 = Persona(nombre='omero', apellido='simpson', email='osimpson@mail.com')
@@ -63,6 +77,7 @@ if __name__ == '__main__' :
 
 
     # Selecionar objetos
-    personas = PersonaDAO.seleccionar()
-    for persona in personas:
-       log.debug(persona)
+   personas = PersonaDAO.seleccionar()
+   for persona in personas:
+        log.debug(persona)
+
