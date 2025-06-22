@@ -26,8 +26,19 @@ class Conexion:
     def obtenerPool(cls):
         if cls._pool is None:
             try:
-                cls._pool = pool.SimpleConnectionPool()
-
+                cls._pool = pool.SimpleConnectionPool(cls._MIN_CON,
+                                                      cls._MAX_CON,
+                                                      host=cls._HOST,
+                                                      user=cls._USERNAME,
+                                                      password=cls._PASSWORD,
+                                                      port = cls._DB_PORT,
+                                                      database=cls._DATABASE)
+                log.debug(f'Creación de pool exitosa: {cls._pool}')
+            except Exception as e:
+                log.error(f'Ocurrió un error al obtener el Pool: {e}')
+                sys.exit()
+        else:
+            return cls._pool
 
 
 if __name__ == '__main__': #es una estructura especial en Python que se usa para ejecutar código solo cuando el archivo se ejecuta directamente, y no cuando se importa desde otro archivo.
