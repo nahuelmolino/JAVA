@@ -13,7 +13,7 @@ class PersonaDAO:
             DELETE --> Eliminar
     """
     _SELECCIONAR = "SELECT * from persona ORDER BY id_persona"
-    _INSERTAR = "INSERT INTO persona(nombre, apellido, email) VALUES (%s, %s, %s)"
+    _INSERTAR = "INSERT INTO persona (nombre, apellido, email) VALUES (%s, %s, %s)"
     _ACTUALIZAR = "UPDATE persona SET nombre = %s, apellido = %s, email = %s where id_persona = %s"
     _eliminar = "DELETE FROM persona WHERE id_persona = %s"
 
@@ -32,7 +32,26 @@ class PersonaDAO:
                     personas.append(persona)
                 return personas
 
+    @classmethod
+    def insertar(cls,persona):
+        with Conexion.obtenerConexion():
+              with Conexion.obtenerCursor() as cursor:
+
+                 valores = (persona._nombre, persona._apellido, persona._email)
+                 cursor.execute(cls._INSERTAR,valores)
+                 log.debug(f'Persona Insertada: {persona}')
+                 return cursor.rowcount
+
+
+
 if __name__ == '__main__' :
+    # Insertar un registro
+    persona1 = Persona(nombre='Pedro', apellido='Romero', email='promero@mail.com')
+    personas_insertadas = PersonaDAO.insertar(persona1)
+    log.debug(f'Personas insertadas: {personas_insertadas} ')
+
+
+    # Selecionar objetos
     personas = PersonaDAO.seleccionar()
     for persona in personas:
        log.debug(persona)
